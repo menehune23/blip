@@ -1,6 +1,6 @@
 {
   "urls": [
-    ["blip/__init__.py", "blip/__init__.py"]
+    ["blip/__init__.py", "github:menehune23/blip/blip/__init__.py"]
   ],
   "version": "0.0.0"
 }
