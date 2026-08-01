@@ -60,6 +60,12 @@ To install the local version of this package, run:
 make install
 ```
 
+To package and install in one command, run:
+
+```bash
+make dev
+```
+
 To install the remote version of this package, run:
 
 ```bash
