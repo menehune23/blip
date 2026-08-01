@@ -60,7 +60,7 @@ To install the local version of this package, run:
 make install
 ```
 
-To package and install in one command, run:
+To package and do a local install in one command, run:
 
 ```bash
 make dev
@@ -71,3 +71,5 @@ To install the remote version of this package, run:
 ```bash
 make install-remote
 ```
+
+> Note that `make install-remote` installs from the current branch's remote content!

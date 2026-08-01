@@ -8,7 +8,7 @@ install:
 
 .PHONY: install-remote
 install-remote:
-	python3 -m mpremote mip install github:menehune23/blip
+	python3 -m mpremote mip install github:menehune23/blip@$$(git rev-parse --abbrev-ref HEAD)
 
 .PHONY: dev
 dev: package install
