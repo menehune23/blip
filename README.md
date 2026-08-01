@@ -42,3 +42,26 @@ def loop(dt: float):
 # Start device
 blip.start("dev", setup, loop)
 ```
+
+## Development
+
+To update the package manifests after adding/removing files or dependencies:
+
+1.  Ensure `"deps"` and `"version"` values are defined in `package.local.json`
+
+1.  Run:
+    ```bash
+    make package
+    ```
+
+To install the local version of this package, run:
+
+```bash
+make install
+```
+
+To install the remote version of this package, run:
+
+```bash
+make install-remote
+```
