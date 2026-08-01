@@ -1,15 +1,39 @@
 {
-  "urls": [
-    ["blip/__init__.py", "blip/__init__.py"],
-    ["blip/devices/__init__.py", "blip/devices/__init__.py"],
-    ["blip/devices/device.py", "blip/devices/device.py"],
-    ["blip/devices/dev.py", "blip/devices/dev.py"],
-    ["blip/devices/displays/__init__.py", "blip/devices/displays/__init__.py"],
-    ["blip/devices/displays/display.py", "blip/devices/displays/display.py"],
-    ["blip/devices/displays/oled_i2c.py", "blip/devices/displays/oled_i2c.py"]
-  ],
-  "deps": [
-    ["ssd1306", "latest"]
-  ],
-  "version": "0.0.0"
+    "urls": [
+        [
+            "blip/__init__.py",
+            "blip/__init__.py"
+        ],
+        [
+            "blip/devices/__init__.py",
+            "blip/devices/__init__.py"
+        ],
+        [
+            "blip/devices/dev.py",
+            "blip/devices/dev.py"
+        ],
+        [
+            "blip/devices/device.py",
+            "blip/devices/device.py"
+        ],
+        [
+            "blip/devices/displays/__init__.py",
+            "blip/devices/displays/__init__.py"
+        ],
+        [
+            "blip/devices/displays/display.py",
+            "blip/devices/displays/display.py"
+        ],
+        [
+            "blip/devices/displays/oled_i2c.py",
+            "blip/devices/displays/oled_i2c.py"
+        ]
+    ],
+    "deps": [
+        [
+            "ssd1306",
+            "latest"
+        ]
+    ],
+    "version": "0.0.0"
 }
