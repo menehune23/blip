@@ -27,6 +27,10 @@
         [
             "blip/devices/displays/oled_i2c.py",
             "github:menehune23/blip/blip/devices/displays/oled_i2c.py"
+        ],
+        [
+            "blip/devices/sound.py",
+            "github:menehune23/blip/blip/devices/sound.py"
         ]
     ],
     "deps": [

@@ -27,6 +27,10 @@
         [
             "blip/devices/displays/oled_i2c.py",
             "blip/devices/displays/oled_i2c.py"
+        ],
+        [
+            "blip/devices/sound.py",
+            "blip/devices/sound.py"
         ]
     ],
     "deps": [

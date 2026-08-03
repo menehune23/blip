@@ -15,6 +15,7 @@ def start(device_type: str, setup: callable, loop: callable):
     for _obj in [
         device,
         device._display,
+        device._buzzer,
     ]:
         for _name in dir(_obj):
             if not _name.startswith("_"):
@@ -29,13 +30,10 @@ def start(device_type: str, setup: callable, loop: callable):
 def _loop(loop: callable):
     last = time.ticks_ms()
     while True:
-        # Update frame time delta
         now = time.ticks_ms()
         dt = time.ticks_diff(now, last) / 1000
         last = now
 
-        # Update button states
-        for button in device._buttons.values():
-            button._update()
+        device._update(dt)
 
         loop(dt)

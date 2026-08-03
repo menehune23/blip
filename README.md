@@ -26,20 +26,37 @@ Alternately, to install with `mpremote`:
     python3 -m mpremote mip install github:menehune23/blip
     ```
 
-### Writing a Program
+### Writing Programs
 
-Every program should have the following structure:
+The example below shows how a typical blip program is structured:
 
 ```python
 import blip
+import time
 
+# Runs once
 def setup():
-  # Runs once
+  # Show some start text
+  blip.clear()
+  blip.text("Get ready!", 25, 25)
+  blip.show()
+  time.sleep(1)
 
+# Runs repeatedly
 def loop(dt: float):
-  # Runs repeatedly
+  # Erase the last frame
+  blip.clear()
 
-# Start device
+  # Add to the current frame
+  if blip.button("a").is_pressed:
+    blip.text("Hello!", 40, 25)
+  else:
+    blip.text("Press 'A'", 30, 25)
+
+  # Show the current frame
+  blip.show()
+
+# Start running 'setup()' and 'loop()'
 blip.start("dev", setup, loop)
 ```
 

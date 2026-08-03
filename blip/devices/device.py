@@ -1,5 +1,6 @@
-from machine import Pin
+from machine import Pin, PWM
 from .displays import Display
+from .sound import Buzzer
 
 
 class Button:
@@ -29,7 +30,12 @@ class Button:
 
 class Device:
     _display: Display
+    _buzzer: Buzzer
     _buttons: dict[str, Button]
+
+    def _update(self, dt: float):
+        for button in self._buttons.values():
+            button._update()
 
     def button(self, name: str) -> Button:
         return self._buttons.get(name.lower())
