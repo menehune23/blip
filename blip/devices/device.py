@@ -1,5 +1,6 @@
 from machine import Pin, PWM
 from .displays import Display
+from .wifi import Wifi
 from .sound import Buzzer
 
 
@@ -11,15 +12,12 @@ class Button:
     def __init__(self, *, pin: int):
         self._pin = Pin(pin, Pin.IN, Pin.PULL_UP)
 
-    @property
     def is_pressed(self) -> bool:
         return self._value == 0
 
-    @property
     def just_pressed(self) -> bool:
         return self._last_value == 1 and self._value == 0
 
-    @property
     def just_released(self) -> bool:
         return self._last_value == 0 and self._value == 1
 
@@ -29,13 +27,14 @@ class Button:
 
 
 class Device:
-    _display: Display
-    _buzzer: Buzzer
-    _buttons: dict[str, Button]
+    _wifi: Wifi | None = None
+    _display: Display | None = None
+    _buzzer: Buzzer | None = None
+    _buttons: dict[str, Button] = {}
 
     def _update(self, dt: float):
         for button in self._buttons.values():
             button._update()
 
-    def button(self, name: str) -> Button:
+    def button(self, name: str) -> Button | None:
         return self._buttons.get(name.lower())

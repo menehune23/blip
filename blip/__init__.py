@@ -1,5 +1,6 @@
 import time
 from .devices import Device
+from .devices.wifi import WIFI_DISCONNECTED, WIFI_CONNECTING, WIFI_CONNECTED
 
 device: Device
 
@@ -14,6 +15,7 @@ def start(device_type: str, setup: callable, loop: callable):
     # Import component public class members into top-level
     for _obj in [
         device,
+        device._wifi,
         device._display,
         device._buzzer,
     ]:

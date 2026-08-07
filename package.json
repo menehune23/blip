@@ -31,6 +31,10 @@
         [
             "blip/devices/sound.py",
             "github:menehune23/blip/blip/devices/sound.py"
+        ],
+        [
+            "blip/devices/wifi.py",
+            "github:menehune23/blip/blip/devices/wifi.py"
         ]
     ],
     "deps": [
