@@ -1,5 +1,4 @@
 import network
-import time
 
 WIFI_DISCONNECTED = 0
 WIFI_CONNECTING = 1
@@ -20,7 +19,13 @@ class Wifi:
         self._wlan.disconnect()
         self._wlan.connect(ssid, password)
 
-    def status(self):
+    def ssid(self) -> str:
+        if not self._wlan.isconnected():
+            return ""
+
+        return self._wlan.config("ssid")
+
+    def status(self) -> int:
         if self._wlan.isconnected():
             self._connecting = False
             return WIFI_CONNECTED
