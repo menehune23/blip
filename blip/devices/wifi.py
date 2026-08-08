@@ -13,6 +13,13 @@ class Wifi:
         self._wlan = network.WLAN(network.STA_IF)
         self._wlan.active(False)
 
+    def scan(self) -> list[str]:
+        active = self._wlan.active()
+        self._wlan.active(True)
+        nets = {ssid.decode("UTF-8") for ssid, *_ in self._wlan.scan() if ssid}
+        self._wlan.active(active)
+        return sorted(list(nets))
+
     def connect(self, ssid, password):
         self._connecting = True
         self._wlan.active(True)
